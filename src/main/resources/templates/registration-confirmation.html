@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Registration Confirmation</title>
+	<meta charset="utf-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+			<!-- reference CSS file -->
+			<link rel="stylesheet"
+			  th:href="@{/css/stylesheet.css}" />
+			  
+			  <!-- reference javascript file -->
+			<link rel="stylesheet"
+			  th:href="@{/script/script.js}" />
+		
+			<!-- Latest compiled and minified CSS -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		
+			<!-- Font Awesome icons -->
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+				  integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+				  crossorigin="anonymous">
+		
+			<!-- jQuery library -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+		
+			<!-- Popper JS -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		
+			<!-- Latest compiled JavaScript -->
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+	<div class="card" style="margin: 150px 600px 0px 600px; 
+								box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);">
+		<div class="alert alert-success">
+			<strong>Success!</strong> Admin registered successfully.	
+		</div>
+		
+		<a th:href="@{/loginPage}" class="btn btn-outline-info">Login</a>
+		<br>
+	</div>
+</body>
+
+</html>
