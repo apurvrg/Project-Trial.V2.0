@@ -11,15 +11,37 @@
 			  <!-- reference javascript file -->
 			<link rel="stylesheet"
 			  th:href="@{/script/script.js}" />
+
+			<!-- Latest compiled and minified CSS -->
+			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+			<!-- Font Awesome icons -->
+			<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+				  integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+				  crossorigin="anonymous">
+
+			<!-- jQuery library -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+			<!-- Popper JS -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+			<!-- Latest compiled JavaScript -->
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
 
 <body>
 
-	<h2>Access Denied - You are not authorized to access this resource.</h2>
+	<div class="card" style="margin: 150px 500px 0px 500px;
+								box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5);">
+		<div class="alert alert-danger" style="text-align: center;">
+			<h3>Access Denied</h3><br>
+			You are not authorized to access this resource.
+		</div>
 
-	<hr>
-	
-	<a th:href="@{/}">Back to Home Page</a>
+		<a th:href="@{/loginPage}" class="btn btn-primary col-md-4 text-white" style="margin: 0px 0px 0px 170px;">Login</a>
+		<br>
+	</div>
 	
 </body>
 
