@@ -100,13 +100,13 @@ VALUES
 DROP TABLE IF EXISTS `java`;
 
 CREATE TABLE `java` (
-  `id` int(100) NOT NULL AUTO_INCREMENT ,
-  `question` varchar(255) DEFAULT NULL,
-  `optA` varchar(255) DEFAULT NULL,
-  `optB` varchar(255) DEFAULT NULL,
-  `optC` varchar(255) DEFAULT NULL,
-  `optD` varchar(255) DEFAULT NULL,
-  `correct_ans` varchar(255) DEFAULT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT ,
+  `question` varchar(255) NOT NULL,
+  `optA` varchar(255) NOT NULL,
+  `optB` varchar(255) NOT NULL,
+  `optC` varchar(255) NOT NULL,
+  `optD` varchar(255) NOT NULL,
+  `correct_ans` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
 
@@ -114,8 +114,9 @@ CREATE TABLE `java` (
 -- Data for table `java`
 --
 
-INSERT INTO `java` VALUES 
-	(1,'Q1','A','B','C','D','D'),
-	(2,'Q2','A','B','C','D','C'),
-	(3,'Q3','A','B','C','D','B'),
-	(4,'Q4','A','B','C','D','A');
+INSERT INTO `java` (question,optA,optB,optC,optD,correct_ans) 
+VALUES 
+	('Q1','A','B','C','D','D'),
+	('Q2','A','B','C','D','C'),
+	('Q3','A','B','C','D','B'),
+	('Q4','A','B','C','D','A');
