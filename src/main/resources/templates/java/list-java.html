@@ -48,7 +48,7 @@
 			  });
 			});
 	 	 </script>
-	</head>
+
 	<body>
 		<div th:if="${session.user}">
 			<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -113,12 +113,12 @@
 			</thead>
 			<tbody id="myTable">
 				<tr th:each="tempJava : ${javaQue}">
-					<td th:text="${tempJava.question}" />
-					<td th:text="${tempJava.optA}" />
-					<td th:text="${tempJava.optB}" />
-					<td th:text="${tempJava.optC}" />
-					<td th:text="${tempJava.optD}" />
-					<td th:text="${tempJava.correct_ans}" />
+					<td th:text="${tempJava.question}"></td>
+					<td th:text="${tempJava.optA}"></td>
+					<td th:text="${tempJava.optB}"></td>
+					<td th:text="${tempJava.optC}"></td>
+					<td th:text="${tempJava.optD}"></td>
+					<td th:text="${tempJava.correct_ans}"></td>
 					<td>
 						<div class="btn-group btn-group-lg">
 							<div sec:authorize="hasAnyRole('ROLE_MANAGER')">

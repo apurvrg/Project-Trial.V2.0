@@ -1,13 +1,12 @@
 package ProjectTrial.dao;
 
-import javax.persistence.EntityManager;
-
+import ProjectTrial.entity.Role;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import ProjectTrial.entity.Role;
+import javax.persistence.EntityManager;
 
 @Repository
 public class RoleDaoImpl implements RoleDao{
@@ -25,7 +24,7 @@ public class RoleDaoImpl implements RoleDao{
 		Query<Role> theQuery = currentSession.createQuery("from Role where name=:roleName", Role.class);
 		theQuery.setParameter("roleName", theRoleName);
 		
-		Role theRole = null;
+		Role theRole;
 		
 		try {
 			theRole = theQuery.getSingleResult();

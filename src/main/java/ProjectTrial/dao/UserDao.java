@@ -1,16 +1,16 @@
 package ProjectTrial.dao;
 
-import java.util.List;
-
 import ProjectTrial.entity.User;
+
+import java.util.List;
 
 public interface UserDao{
 	
-	public User findByUserName(String userName);
+	User findByUserName(String userName);
     
-    public void save(User user);
+	void save(User user);
     
-    public List<User> findAll();
+	List<User> findAll();
     
     
 }

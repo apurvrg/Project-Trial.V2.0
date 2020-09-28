@@ -22,7 +22,7 @@ public class RegistrationController {
 	@Autowired
     private UserService userService;
 	
-    private Logger logger = Logger.getLogger(getClass().getName());
+    private final Logger logger = Logger.getLogger(getClass().getName());
     
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {

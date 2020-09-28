@@ -23,7 +23,7 @@ public class UserDaoImpl implements UserDao{
 		// now retrieve/read from database using username
 		Query<User> theQuery = currentSession.createQuery("from User where userName=:uName", User.class);
 		theQuery.setParameter("uName", theUserName);
-		User theUser = null;
+		User theUser;
 		try {
 			theUser = theQuery.getSingleResult();
 		} catch (Exception e) {
@@ -42,7 +42,7 @@ public class UserDaoImpl implements UserDao{
 		currentSession.saveOrUpdate(theUser);
 
 		/*
-		 * @SuppressWarnings("rawtypes") Query theQuery =
+		 * Query theQuery =
 		 * currentSession.createSQLQuery("CREATE TEMPORARY TABLE `user_answer` (\n" +
 		 * "  `user_id` int(11) NOT NULL AUTO_INCREMENT,\n" +
 		 * "  `user_answer` varchar(255) NOT NULL,\n" + "  PRIMARY KEY (`id`)\n" +
@@ -59,7 +59,7 @@ public class UserDaoImpl implements UserDao{
 
 				// now retrieve/read from database using username
 				Query<User> theQuery = currentSession.createQuery("from User", User.class);
-				List<User> theUser = null;
+				List<User> theUser;
 				try {
 					theUser = theQuery.getResultList();
 				} catch (Exception e) {

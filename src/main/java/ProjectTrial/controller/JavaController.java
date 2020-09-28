@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/java")
 public class JavaController {
 	
-	private JavaService javaService;
+	private final JavaService javaService;
 	public int theJavaId = 0;
 
 	public JavaController(JavaService theJavaService) {

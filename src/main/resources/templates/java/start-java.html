@@ -41,6 +41,38 @@
 			document.getElementById("mySidenav").style.width = "0";
 			document.getElementById("main").style.marginLeft= "0";
 		  }
+
+			var now = 0;
+			now = sessionStorage.getItem("now");
+			var totalTime = 10;
+
+			var x = setInterval(function() {
+
+				var distance = totalTime - now;
+
+				sessionStorage.setItem("distance", distance);
+
+				now++;
+
+				sessionStorage.setItem("now", now);
+
+				var newNow = sessionStorage.getItem("now");
+
+				now = newNow;
+
+				document.getElementById("distance").innerHTML = "Timer : " + distance + " s";
+
+				if(distance < 1){
+					clearInterval(x);
+					document.getElementById("distance").innerHTML = "EXPIRED";
+					sessionStorage.clear();
+				}
+
+			},1000);
+
+			function clearTimer() {
+				sessionStorage.clear();
+			}
 			
 	 	 </script>
 	</head>
@@ -52,6 +84,13 @@
 					<li class="navbar-brand" >
 						<span class="navbar-toggler-icon" onclick="openNav()"></span>
 						<i class="fa fa-fw fa-user" style="font-size:30px"></i><b th:text="${session.user.firstName} + ' ' + ${session.user.lastName}"></b>
+					</li>
+				</ul>
+				<ul class="nav justify-content-end">
+					<li class="nav-item">
+						<div class="text-right text-white">
+							<h3 id="distance"></h3>
+						</div>
 					</li>
 				</ul>
 			</nav> 
@@ -74,7 +113,7 @@
 				<div class="logoutbtn">
 					<form th:action="@{/logout}"
 						method="POST">
-						<input type="submit" value="Logout" class="btn btn-outline-info"/>
+						<input type="submit" value="Logout" class="btn btn-outline-info" onclick="clearTimer()"/>
 					</form>
 				</div>				
 			</div>	  
@@ -98,10 +137,13 @@
 				 	<br>
 				 </div>
 
-				<a th:href="@{/java/javaPrevious}" class="btn btn-outline-info">Previous</a>
-				<a th:href="@{/java/javaSave}" class="btn btn-outline-info">Save</a>
-				<a th:href="@{/java/javaNext}" class="btn btn-outline-info">Next</a>
+
+				<a th:href="@{/java/javaSave}" class="btn btn-success text-white">Save</a>
+
 			</form>
+
+				<a th:href="@{/java/javaPrevious}" class="btn btn-info text-white">Previous</a>
+				<a th:href="@{/java/javaNext}" class="btn btn-info text-white">Next</a>
 		</div>
 		
 		
