@@ -32,8 +32,7 @@ CREATE TABLE `user` (
 INSERT INTO `user` (username,password,first_name,last_name,email)
 VALUES 
 ('john','$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K','John','Doe','john@luv2code.com'),
-('mary','$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K','Mary','Public','mary@luv2code.com'),
-('susan','$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K','Susan','Adams','susan@luv2code.com');
+('mary','$2a$04$eFytJDGtjbThXa80FyOOBuFdK2IwjyWefYkMpiBEFlpBwDH.5PM0K','Mary','Public','mary@luv2code.com');
 
 
 --
@@ -54,7 +53,7 @@ CREATE TABLE `role` (
 
 INSERT INTO `role` (name)
 VALUES 
-('ROLE_STUDENT'),('ROLE_MANAGER'),('ROLE_ADMIN');
+('ROLE_STUDENT'),('ROLE_MANAGER');
 
 --
 -- Table structure for table `users_roles`
@@ -71,12 +70,11 @@ CREATE TABLE `users_roles` (
   KEY `FK_ROLE_idx` (`role_id`),
   
   CONSTRAINT `FK_USER_05` FOREIGN KEY (`user_id`) 
-  REFERENCES `user` (`id`) 
-  ON DELETE NO ACTION ON UPDATE NO ACTION,
+  REFERENCES `user` (`id`),
+
   
   CONSTRAINT `FK_ROLE` FOREIGN KEY (`role_id`) 
   REFERENCES `role` (`id`) 
-  ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 SET FOREIGN_KEY_CHECKS = 1;
@@ -88,8 +86,7 @@ SET FOREIGN_KEY_CHECKS = 1;
 INSERT INTO `users_roles` (user_id,role_id)
 VALUES 
 (1, 1),
-(2, 2),
-(3, 3);
+(2, 2);
 
 
 ----------------- Subject Directory -------------
