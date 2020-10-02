@@ -6,6 +6,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 
@@ -19,6 +21,7 @@ public class JavaController {
 	public JavaController(JavaService theJavaService) {
 		javaService = theJavaService;
 	}
+
 	
 	
 	
@@ -47,9 +50,8 @@ public class JavaController {
 	public String saveQuestion(@ModelAttribute("java") Java theJava) {
 		
 		// save the question
-		javaService.save(theJava);
-		
-		
+		 javaService.save(theJava);
+
 		// use a redirect to prevent duplicate submissions
 		return "redirect:/java/javaQueList";
 	}
@@ -149,6 +151,12 @@ public class JavaController {
 		return "/java/start-java";
 		
 	}
-	
+        @GetMapping("/saveUserAnswer")
+        public String saveUserAnswer(HttpServletRequest request, HttpServletResponse response){
+			String userAnswer = request.getParameter("javaOption");
+            System.out.println("user answer is - " + userAnswer);
+            return "redirect:/java/javaNext";
+        }
+
 
 }

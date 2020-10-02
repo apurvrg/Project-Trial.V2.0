@@ -19,7 +19,6 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 	@Autowired
     private UserService userService;
 	
-	@SuppressWarnings("RedundantThrows")
 	@Override
 	public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
 			throws IOException, ServletException {

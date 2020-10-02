@@ -117,3 +117,13 @@ VALUES
 	('Q2','A','B','C','D','C'),
 	('Q3','A','B','C','D','B'),
 	('Q4','A','B','C','D','A');
+
+---------------------- User Answers -------------------------
+
+create table `userAnswer`(
+    `id` int NOT NULL AUTO_INCREMENT ,
+	`userId` int default null,
+	`question_id` int default null,
+    `answer` varchar(50) default null,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;

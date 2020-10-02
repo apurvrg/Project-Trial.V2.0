@@ -121,34 +121,32 @@
 		</div>
 		</div>
 		<div class="container">
-			<form>
+			<form th:action="@{/java/saveUserAnswer}"
+				  th:object="${javaOption}">
 				 <div th:each="tempJavaById : ${javaById}">
 				 	<div th:each="tempJavaListSize : ${javaListSize}">
 				 		Question <b th:text="${tempJavaById.id}"></b> of <b th:text="${javaListSize}"></b>
 				 	</div>
 				 	<h3 th:text="${tempJavaById.question}"></h3>
-				 	<input type="radio" class="form-check-input" name="javaOption" th:text="${tempJavaById.optA}">
+				 	<input type="radio" class="form-check-input" name="javaOption" th:value="${tempJavaById.optA}" th:text="${tempJavaById.optA}">
 				 	<br>
-				 	<input type="radio" class="form-check-input" name="javaOption" th:text="${tempJavaById.optB}">
+				 	<input type="radio" class="form-check-input" name="javaOption" th:value="${tempJavaById.optB}" th:text="${tempJavaById.optB}">
 				 	<br>
-				 	<input type="radio" class="form-check-input" name="javaOption" th:text="${tempJavaById.optC}">
+				 	<input type="radio" class="form-check-input" name="javaOption" th:value="${tempJavaById.optC}" th:text="${tempJavaById.optC}">
 				 	<br>
-				 	<input type="radio" class="form-check-input" name="javaOption" th:text="${tempJavaById.optD}">
+				 	<input type="radio" class="form-check-input" name="javaOption" th:value="${tempJavaById.optD}" th:text="${tempJavaById.optD}">
 				 	<br>
 				 </div>
 
 
-				<a th:href="@{/java/javaSave}" class="btn btn-success text-white">Save</a>
-
+<!--				<a th:href="@{/java/saveUserAnswer}" class="btn btn-success text-white">Save</a>-->
+				<button type="submit" class="btn btn-success text-white">Save</button>
+				
 			</form>
 
 				<a th:href="@{/java/javaPrevious}" class="btn btn-info text-white">Previous</a>
 				<a th:href="@{/java/javaNext}" class="btn btn-info text-white">Next</a>
 		</div>
-		
-		
-		
-		
 
 	</body>
 </html>

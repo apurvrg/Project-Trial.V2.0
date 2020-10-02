@@ -24,7 +24,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
     @Autowired
     private CustomAuthenticationSuccessHandler customAuthenticationSuccessHandler;
 	
-   @SuppressWarnings("RedundantThrows")
    @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(authenticationProvider());

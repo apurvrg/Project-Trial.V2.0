@@ -41,15 +41,6 @@ public class UserDaoImpl implements UserDao{
 		// create the user ... finally LOL
 		currentSession.saveOrUpdate(theUser);
 
-		/*
-		 * Query theQuery =
-		 * currentSession.createSQLQuery("CREATE TEMPORARY TABLE `user_answer` (\n" +
-		 * "  `user_id` int(11) NOT NULL AUTO_INCREMENT,\n" +
-		 * "  `user_answer` varchar(255) NOT NULL,\n" + "  PRIMARY KEY (`id`)\n" +
-		 * ") ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;");
-		 * System.out.println("temporary table created for user" + theUser);
-		 
-		System.out.println(theQuery);*/
 	}
 
 	@Override
