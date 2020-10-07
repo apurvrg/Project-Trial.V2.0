@@ -81,26 +81,6 @@
 	</div>
 
 	<br>
-		<!-- <div class="container">	
-			Check for login error																	
-			<div th:if="${session.user}" >
-				First Name:	<b><span th:text="${session.user.firstName}"></span></b>
-				<br><br>
-				Last Name: <b><span th:text="${session.user.lastName}"></span></b>
-				<br><br>
-				Email: <b><span th:text="${session.user.email}"></span></b>
-				<br><br>
-				<div sec:authorize="hasRole('ROLE_STUDENT')">
-					Logged in as: <span><b>STUDENT</b></span>
-				</div>
-				<div sec:authorize="hasRole('ROLE_MANAGER')">
-					Logged in as: <span><b>MANAGER</b></span>
-				</div>
-				<div sec:authorize="hasRole('ROLE_ADMIN')">
-					Logged in as: <span><b>ADMIN</b></span>
-				</div>
-			</div>		
-		</div>	 -->	
 		
 		<div class="card">
 			<div th:if="${session.user}" >

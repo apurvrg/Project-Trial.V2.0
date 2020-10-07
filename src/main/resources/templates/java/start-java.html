@@ -44,15 +44,15 @@
 
 			var now = 0;
 			now = sessionStorage.getItem("now");
-			var totalTime = 0.005 * 3600;
+			var totalTimeInMinutes = 20 * 60;
 
 			var x = setInterval(function() {
 
-				var distance = totalTime - now;
+				var distance = totalTimeInMinutes - now;
 					var hrs = Math.floor(distance / 3600);
 					var min = Math.floor((distance - (hrs * 3600)) / 60);
 					var seconds = distance - (hrs * 3600) - (min * 60);
-            		seconds = Math.round(seconds * 100) / 100;
+            		seconds = Math.floor(Math.round(seconds * 100) / 100);
 
 				sessionStorage.setItem("distance", distance);
 
@@ -150,8 +150,8 @@
 				
 			</form>
 
-				<a th:href="@{/java/javaPrevious}" class="btn btn-info text-white">Previous</a>
-				<a th:href="@{/java/javaNext}" class="btn btn-info text-white">Next</a>
+				<a th:href="@{/java/javaPrevious}" class="btn btn-info text-white">&laquo; Previous</a>
+				<a th:href="@{/java/javaNext}" class="btn btn-info text-white">Next &raquo;</a>
 		</div>
 
 	</body>

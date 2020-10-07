@@ -92,59 +92,123 @@
 				<span class="navbar-toggler-icon" onclick="openNav()"></span>
 		</div>
 	</div>
+<!--	<div class="container">-->
+<!--			-->
+<!--			<table class="table table-striped">-->
+<!--				<thead class="thead-dark">-->
+<!--				<tr>-->
+<!--					<th>Subject</th>-->
+<!--					<th>No. of Questions</th>-->
+<!--					<th>Time</th>-->
+<!--					<th></th>-->
+<!--				</tr>-->
+<!--				</thead>-->
+<!--				<tbody id="myTable">-->
+<!--				<tr>-->
+<!--					<td>C</td>-->
+<!--					<td>20</td>-->
+<!--					<td>20 Min</td>-->
+<!--					<td>-->
+<!--						<div sec:authorize="hasRole('ROLE_STUDENT')">-->
+<!--							<a th:href="@{/java/javaInstructions}" class="btn btn-outline-info">Start</a>-->
+<!--						</div>-->
+<!--						<div sec:authorize="hasAnyRole('ROLE_MANAGER')">-->
+<!--							<a th:href="@{/java/javaQueList}" class="btn btn-outline-info">Manage</a>-->
+<!--						</div>-->
+<!--					</td>-->
+<!--				</tr>-->
+<!--				<tr>-->
+<!--					<td>C++</td>-->
+<!--					<td>20</td>-->
+<!--					<td>20 Min</td>-->
+<!--					<td>-->
+<!--						<div sec:authorize="hasRole('ROLE_STUDENT')">-->
+<!--							<a th:href="@{/java/javaInstructions}" class="btn btn-outline-info">Start</a>-->
+<!--						</div>-->
+<!--						<div sec:authorize="hasAnyRole('ROLE_MANAGER')">-->
+<!--							<a th:href="@{/java/javaQueList}" class="btn btn-outline-info">Manage</a>-->
+<!--						</div>-->
+<!--					</td>-->
+<!--				</tr>-->
+<!--				<tr>-->
+<!--					<td>Java</td>-->
+<!--					<td><b th:text="${listSize}"></b></td>-->
+<!--					<td>20 Min</td>-->
+<!--					<td>-->
+<!--						<div sec:authorize="hasRole('ROLE_STUDENT')">-->
+<!--							<a th:href="@{/java/javaInstructions}" class="btn btn-outline-info">Start</a>-->
+<!--						</div>-->
+<!--						<div sec:authorize="hasAnyRole('ROLE_MANAGER')">-->
+<!--							<a th:href="@{/java/javaQueList}" class="btn btn-outline-info">Manage</a>-->
+<!--						</div>-->
+<!--					</td>-->
+<!--				</tr>-->
+<!--				</tbody>-->
+<!--			</table>-->
+<!--	</div>-->
+
 	<div class="container">
-			
-			<table class="table table-striped">
-				<thead class="thead-dark">
-				<tr>
-					<th>Subject</th>
-					<th>No. of Questions</th>
-					<th>Time</th>
-					<th></th>
-				</tr>
-				</thead>
-				<tbody id="myTable">
-				<tr>
-					<td>C</td>
-					<td>20</td>
-					<td>20 Min</td>
-					<td>
-						<div sec:authorize="hasRole('ROLE_STUDENT')">
-							<a th:href="@{/java/javaInstructions}" class="btn btn-outline-info">Start</a>
-						</div>
-						<div sec:authorize="hasAnyRole('ROLE_MANAGER')">
-							<a th:href="@{/java/javaQueList}" class="btn btn-outline-info">Manage</a>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>C++</td>
-					<td>20</td>
-					<td>20 Min</td>
-					<td>
-						<div sec:authorize="hasRole('ROLE_STUDENT')">
-							<a th:href="@{/java/javaInstructions}" class="btn btn-outline-info">Start</a>
-						</div>
-						<div sec:authorize="hasAnyRole('ROLE_MANAGER')">
-							<a th:href="@{/java/javaQueList}" class="btn btn-outline-info">Manage</a>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td>Java</td>
-					<td>20</td>
-					<td>20 Min</td>
-					<td>
-						<div sec:authorize="hasRole('ROLE_STUDENT')">
-							<a th:href="@{/java/javaInstructions}" class="btn btn-outline-info">Start</a>
-						</div>
-						<div sec:authorize="hasAnyRole('ROLE_MANAGER')">
-							<a th:href="@{/java/javaQueList}" class="btn btn-outline-info">Manage</a>
-						</div>
-					</td>
-				</tr>
-				</tbody>
-			</table>
+		<div class="card-deck">
+			<div class="card bg-basic">
+				<div class="card-body text-center">
+					<h1 style="font-size: 70px;"><i class="fab fa-angular" style="color:red"></i></h1>
+					<hr>
+					<h3>Angular</h3>
+					<hr>
+					<p>Number of questions</p>
+					<h4></h4>
+					<hr>
+					<h4><i class="far fa-clock" style="color:DodgerBlue"></i> 20 min</h4>
+					<hr>
+					<div sec:authorize="hasRole('ROLE_STUDENT')">
+						<a  class="btn btn-primary text-white">Start</a>
+					</div>
+					<div sec:authorize="hasAnyRole('ROLE_MANAGER')">
+						<a  class="btn btn-primary text-white">Manage</a>
+					</div>
+				</div>
+			</div>
+			<div class="card bg-basic">
+				<div class="card-body text-center">
+					<h1 style="font-size: 70px;"><i class="fab fa-html5" style="color:DodgerBlue"></i></h1>
+					<hr>
+					<h3>HTML5</h3>
+					<hr>
+					<p>Number of questions</p>
+					<h4></h4>
+					<hr>
+					<h4><i class="far fa-clock" style="color:DodgerBlue"></i> 20 min</h4>
+					<hr>
+					<div sec:authorize="hasRole('ROLE_STUDENT')">
+						<a class="btn btn-primary text-white">Start</a>
+					</div>
+					<div sec:authorize="hasAnyRole('ROLE_MANAGER')">
+						<a  class="btn btn-primary text-white">Manage</a>
+					</div>
+				</div>
+			</div>
+			<div class="card bg-basic">
+				<div class="card-body text-center">
+					<h1 style="font-size: 70px;"><i class="fab fa-java" style="color:red"></i></h1>
+					<hr>
+					<h3>Java</h3>
+					<hr>
+					<p>Number of questions</p>
+					<h4 th:text="${listSize}"></h4>
+					<hr>
+					<h4><i class="far fa-clock" style="color:DodgerBlue"></i> 20 min</h4>
+					<hr>
+					<div sec:authorize="hasRole('ROLE_STUDENT')">
+						<a th:href="@{/java/javaInstructions}" class="btn btn-primary text-white">Start</a>
+					</div>
+					<div sec:authorize="hasAnyRole('ROLE_MANAGER')">
+						<a th:href="@{/java/javaQueList}" class="btn btn-primary text-white">Manage</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
 	</div>
 
 </body>

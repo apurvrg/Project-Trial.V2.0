@@ -1,6 +1,8 @@
 package ProjectTrial.controller;
 
+import ProjectTrial.entity.Java;
 import ProjectTrial.entity.User;
+import ProjectTrial.service.JavaService;
 import ProjectTrial.service.UserService;
 import ProjectTrial.user.CrmUser;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +24,14 @@ public class ManagementController {
 	@Autowired
 	private UserService userService;
 
+	@Autowired
+	private final JavaService javaService;
+
 	private final Logger logger = Logger.getLogger(getClass().getName());
+
+	public ManagementController(JavaService javaService) {
+		this.javaService = javaService;
+	}
 
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
@@ -38,7 +47,13 @@ public class ManagementController {
 	}
 	
 	@GetMapping("/subject-list")
-	public String getSubjectList() {		
+	public String getSubjectList(Model theModel) {
+		List<Java> javaListSize = javaService.findAll();
+
+		int listSize = javaListSize.size();
+
+		theModel.addAttribute("listSize", listSize);
+
 		return "/management/subject-list";
 	}
 

@@ -2,6 +2,7 @@ package ProjectTrial.controller;
 
 import ProjectTrial.entity.Java;
 import ProjectTrial.service.JavaService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -14,17 +15,17 @@ import java.util.List;
 @Controller
 @RequestMapping("/java")
 public class JavaController {
-	
+
+	@Autowired
 	private final JavaService javaService;
+
 	public int theJavaId = 0;
 
 	public JavaController(JavaService theJavaService) {
 		javaService = theJavaService;
 	}
 
-	
-	
-	
+
 	@GetMapping("/javaQueList")
 	public String listJavaQue(Model theModel) {
 		
