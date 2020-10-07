@@ -158,5 +158,11 @@ public class JavaController {
             return "redirect:/java/javaNext";
         }
 
+        @GetMapping("/submit")
+	public String submit(Model theModel){
+			return "/java/submit";
+		}
+
+
 
 }

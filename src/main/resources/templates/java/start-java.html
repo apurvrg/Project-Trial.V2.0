@@ -44,11 +44,15 @@
 
 			var now = 0;
 			now = sessionStorage.getItem("now");
-			var totalTime = 10;
+			var totalTime = 0.005 * 3600;
 
 			var x = setInterval(function() {
 
 				var distance = totalTime - now;
+					var hrs = Math.floor(distance / 3600);
+					var min = Math.floor((distance - (hrs * 3600)) / 60);
+					var seconds = distance - (hrs * 3600) - (min * 60);
+            		seconds = Math.round(seconds * 100) / 100;
 
 				sessionStorage.setItem("distance", distance);
 
@@ -60,18 +64,20 @@
 
 				now = newNow;
 
-				document.getElementById("distance").innerHTML = "Timer : " + distance + " s";
+				document.getElementById("distance").innerHTML = "Timer : " + hrs + "-" + min + "-" + seconds;
 
 				if(distance < 1){
 					clearInterval(x);
-					document.getElementById("distance").innerHTML = "EXPIRED";
+					document.getElementById("distance").innerHTML = "TIME OUT";
 					sessionStorage.clear();
+					window.location = "/java/submit";
 				}
 
 			},1000);
 
 			function clearTimer() {
 				sessionStorage.clear();
+				clearInterval(x);
 			}
 			
 	 	 </script>
